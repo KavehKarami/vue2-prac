@@ -2,8 +2,8 @@
   <div>
     <div>Get All Users</div>
     <User :cards="cards" :border-color="borderColor">
-      <span slot="start">start user box</span>
-      <span slot="end">end user box</span>
+      <span slot="start">start users box</span>
+      <span slot="end">end users box</span>
     </User>
   </div>
 </template>
