@@ -17,6 +17,13 @@ export default {
       count: 0,
     };
   },
+  watch: {
+    // name must have be same to data (example: `count()` is `this.count`)
+    count() {
+      if (this.count > 3) console.log("grater than 3");
+      else console.log(this.count);
+    },
+  },
   methods: {
     increment() {
       ++this.count;
