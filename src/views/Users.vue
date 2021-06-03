@@ -1,7 +1,10 @@
 <template>
   <div>
     <div>Get All Users</div>
-    <User :cards="cards" :border-color="borderColor" />
+    <User :cards="cards" :border-color="borderColor">
+      <span slot="start">start user box</span>
+      <span slot="end">end user box</span>
+    </User>
   </div>
 </template>
 

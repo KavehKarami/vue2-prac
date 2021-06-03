@@ -1,5 +1,7 @@
 <template>
-  <div>
+  <div class="mt-3">
+    <slot name="start"></slot>
+
     <div v-for="(card, index) in cards" :key="index" class="card">
       <h4>Name: {{ card.name }}</h4>
       <h5>Username: {{ card.username }}</h5>
@@ -7,6 +9,8 @@
         See More
       </router-link>
     </div>
+
+    <slot name="end"></slot>
   </div>
 </template>
 
@@ -27,5 +31,8 @@ export default {
   h4 {
     margin-top: 0;
   }
+}
+.mt-3 {
+  margin-top: 15px;
 }
 </style>
