@@ -3,7 +3,9 @@
     <div v-for="(card, index) in cards" :key="index" class="card">
       <h4>Name: {{ card.name }}</h4>
       <h5>Username: {{ card.username }}</h5>
-      <a href="/">See More</a>
+      <router-link :to="{ name: 'users-details', params: { id: card.id } }">
+        See More
+      </router-link>
     </div>
   </div>
 </template>

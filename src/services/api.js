@@ -5,7 +5,10 @@ const newAxios = axios.create({
 });
 
 export default {
-  async getUsers() {
-    return await newAxios.get("/users");
+  getUsers() {
+    return newAxios.get("/users");
+  },
+  getUser(id) {
+    return newAxios.get("/users/" + id);
   },
 };

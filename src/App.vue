@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Navbar />
+    <Navbar :count="count" />
     <router-view />
   </div>
 </template>
@@ -11,6 +11,19 @@ import Navbar from "@/components/Navbar.vue";
 export default {
   components: {
     Navbar,
+  },
+  data() {
+    return {
+      count: 0,
+    };
+  },
+  methods: {
+    increment() {
+      ++this.count;
+    },
+    decrement() {
+      --this.count;
+    },
   },
 };
 </script>
