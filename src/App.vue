@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Navbar :count="count" />
-    <router-view />
+    <router-view @add-one="increment" @decrement="decrement" />
   </div>
 </template>
 

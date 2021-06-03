@@ -1,12 +1,18 @@
 <template>
-  <div v-if="user.address">
-    <h3>name: {{ user.name }}</h3>
-    <h3>username: {{ user.username }}</h3>
-    <h3>email: {{ user.email }}</h3>
-    <h3>phone: {{ user.phone }}</h3>
-    <h3>website: {{ user.website }}</h3>
-    <h3>city: {{ user.address.city }}</h3>
-    <h3>company name: {{ user.company.name }}</h3>
+  <div>
+    <div>
+      <button @click="decrement">decrement</button>
+      <button @click="increment">increment</button>
+    </div>
+    <div v-if="user.address">
+      <h3>name: {{ user.name }}</h3>
+      <h3>username: {{ user.username }}</h3>
+      <h3>email: {{ user.email }}</h3>
+      <h3>phone: {{ user.phone }}</h3>
+      <h3>website: {{ user.website }}</h3>
+      <h3>city: {{ user.address.city }}</h3>
+      <h3>company name: {{ user.company.name }}</h3>
+    </div>
   </div>
 </template>
 
@@ -23,6 +29,14 @@ export default {
     return {
       user: {},
     };
+  },
+  methods: {
+    increment() {
+      this.$emit("add-one");
+    },
+    decrement() {
+      this.$emit("decrement");
+    },
   },
 };
 </script>
