@@ -1,9 +1,23 @@
 <template>
   <div id="app">
-    <div id="nav"><router-link to="/">Home</router-link></div>
-
+    <Navbar />
     <router-view />
   </div>
 </template>
 
-<style lang="scss"></style>
+<script>
+import Navbar from "@/components/Navbar.vue";
+
+export default {
+  components: {
+    Navbar,
+  },
+};
+</script>
+
+<style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+* {
+  font-family: "Roboto", sans-serif;
+}
+</style>

@@ -1,0 +1,25 @@
+<template>
+  <div>
+    <div>Get All Users</div>
+    <User :cards="cards" :border-color="borderColor" />
+  </div>
+</template>
+
+<script>
+import api from "../services/api";
+import User from "@/components/User.vue";
+
+export default {
+  components: {
+    User,
+  },
+  data: () => ({
+    cards: [],
+    borderColor: "#000",
+  }),
+  async mounted() {
+    const { data: cards } = await api.getUsers();
+    this.cards = cards;
+  },
+};
+</script>
